@@ -1,31 +1,31 @@
 <?php
-//function to test palindrome with strrev 
-function PalindromeTester($a){
+function PalindromeTesterAuto($a){
 	if ($a == strrev($a)){
 	echo $a . " is Palindrome";
 	}
-    else {echo $a . " is not Palindrome";}
+	else {echo $a . " is not Palindrome";}
 }
 
-//function to test palindrome manually 
-function PalindromeTesterManual($a){
+function PalindromTesterManual($a){
     $Array = array();
     $Array = str_split($a);
-    $len = count($a);
+    $len = sizeof($Array);
+
     $newString = "";
 
-    for ($i = $len; $i >= 0; $i--) {
-        $newString.=$Array[$i];
+    for($i = $len; $i >= 0; $i--){
+        $newString.=$Array[$i];    
     }
     echo "<br>";
     if ($a == $newString) {
         echo "Output: " . $a . " is a palindrome";
     } else {
         echo "Output: " . $a . " is not a palindrome";
-    }
+    }    
 }
 
-$a = "Local";
-PalindromeTester($a);
+$a = “Local”;
+PalindromeTesterAuto($a);
+echo "<br>";
 PalindromeTesterManual($a);
 ?>
